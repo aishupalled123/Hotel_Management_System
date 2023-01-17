@@ -1,0 +1,16 @@
+all: hotel
+
+hotel:  admin.o customer.o main.o
+        g++ admin.o customer.o main.o -o hotel
+
+admin.o: admin.cpp
+        g++ -c header.h admin.cpp
+
+customer.o: customer.cpp
+        g++ -c header.h customer.cpp
+
+main.o: main.cpp
+        g++ -c header.h main.cpp
+
+clean:
+        rm *.o
